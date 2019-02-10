@@ -97,6 +97,7 @@ void solvePuzzle(string start[3][3], string goal[3][3], int x, int y) {
 			if (validMove(parent->x,parent->y)) {
 				Node* child = newNode(parent, parent->matrix, std::to_string(parent->x), std::to_string(parent->y), std::to_string(parent->x) + row[i], std::to_string(parent->y) + column[i]);
 				child->hScore = calcCost(child->matrix, goal);
+				pqueue.push(child);
 			}
 		}
 
